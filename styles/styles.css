@@ -99,8 +99,23 @@ main {
     /* height: 100vh; */
     min-height: calc(100vh - 105px);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items:center;
+}
+
+#dead-goblins{
+    height: 50px;
+    position: fixed;
+    top: 90px;
+    position: fixed;
+    top: 90px;
+    font-size: 1.5rem;
+    font-family: fleisch-wolf, sans-serif;
+    background-color: var(--strawberry);
+    color: var(--lime);
+    padding: 10px 10px 40px 10px; 
+    border: 2px outset var(--blueberry);
 }
 
 #player-name{
@@ -146,6 +161,42 @@ main {
 
 #middle-section{
     width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    font-family: fleisch-wolf, sans-serif;
+    color: var(--lime);
+}
+
+#super{
+    font-size: 3rem;
+}
+
+#goblin{
+    font-size: 6rem;
+    position: relative;
+    top: -10px;
+}
+
+#fighter{
+    position: relative;
+    top: -25px;
+    font-size: 5rem;
+}
+
+#super, #goblin, #fighter{
+    text-shadow: 0 1px var(--strawberry),
+                0 2px var(--strawberry),
+                0 3px var(--strawberry),
+                0 4px var(--strawberry),
+                0 5px var(--strawberry),
+                0 6px var(--strawberry),
+                0 7px var(--strawberry),
+                0 8px var(--strawberry);
 }
 
 #goblin-panel{
@@ -191,4 +242,84 @@ main {
 
 .goblin-image{
     object-fit: cover;
+}
+
+.dead{
+    opacity: 50%;
+    cursor: default; 
+}
+
+.dead:hover{
+    box-shadow: none;
+}
+
+#add-goblin{
+    position: fixed;
+    top: 90px;
+    width: 300px;
+    font-family: fleisch-wolf, sans-serif;
+    cursor: pointer;
+    background-color: var(--strawberry);
+    color: var(--lime);
+    padding: 10px 0;
+    font-size: 1.5rem;
+    border: 2px outset var(--blueberry);
+
+}
+
+#add-goblin:hover{
+    background-color: var(--cherry);
+}
+
+#add-goblin:active{
+    background-color: var(--blueberry);
+}
+
+.player-chooser{
+    position: fixed;
+    top:0;
+    left:0;
+    background-color: var(--grapeTrans);
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chooser-tray{
+    width: 1100px;
+    height: 700px;
+    background-color: var(--blueberry);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column
+}
+
+.hero-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    background-color: var(--grape);
+}
+
+.hero-box:hover{
+    box-shadow: 0 0 5px var(--lime);
+}
+
+.hero{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.hero-name{
+    /* position: relative; */
+    /* top: -5px; */
+    color: var(--lime);
+    padding-bottom: 3px;
 }

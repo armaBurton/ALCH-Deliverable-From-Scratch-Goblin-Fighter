@@ -21,6 +21,7 @@
     <main>
         <section class="game-holder" id="game-holder">
             <section class="player-panel" id="player-panel">
+                <div class="dead-goblins" id="dead-goblins">Goblin Kills: <span class="dead-goblins" id="dead-goblin-counter">💀💀</span></div>
                 <div class="player-card" id="player-card">
                     <div class="char-sheet" id="char-sheet">
                         <h2 class="player-name" id="player-name">
@@ -37,10 +38,13 @@
                 </div>
             </section>
             <section class="middle-section" id="middle-section">
-
+                <h1 class="title"   id="super">SUPER</h1>
+                <h1 class="title"   id="goblin">GOBLIN</h1>
+                <h1 class="title"   id="fighter">FIGHTER</h1>
             </section>
             <section class="goblin-panel" id="goblin-panel">
-                <div class="goblin-card">
+                <button class="add-goblin" id="add-goblin">Add Goblin!</button>
+                <div class="goblin-card dead">
                     <img src="./assets/mechazoid-goblin.jpg" alt="" class="goblin-image">
                     <div class="goblin-stats">
                         <div class="goblin-class" id="gob1-class">Mechaziod Goblin</div>
@@ -63,6 +67,46 @@
                 </div>
             </section>
         </section>
+        <section class="player-chooser" id="player-chooser">
+            <div class="chooser-tray" id="chooser-tray">
+                <h1 id="chooser-header">Character Picker</h1>
+                <h3 id="sub-text">Enter your name then choose a hero.</h3>
+                <div class="heroes" id="heroes">
+                    <div class="hero-box"  id="one">
+                        <img src="./assets/daemon.jpg" alt="" class="hero" id="hero-one">
+                        <p class="hero-name">DAEMON</p>
+                    </div>
+                    <div id="two">
+
+                    </div>
+                    <div id="three">
+
+                    </div>
+                    <div id="four">
+
+                    </div>
+                    <div id="five">
+
+                    </div>
+                    <div id="six">
+
+                    </div>
+                    <div id="seven">
+
+                    </div>
+                    <div id="eight">
+
+                    </div>
+                    <div id="nine">
+
+                    </div>
+                    <div id="ten">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
     <footer>
         <div class="copy gutter-right">&copy; 2021 Alchemy Code Lab</div>
