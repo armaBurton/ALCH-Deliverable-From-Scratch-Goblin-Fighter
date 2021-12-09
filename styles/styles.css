@@ -1,26 +1,20 @@
+@import url("https://use.typekit.net/elu6hhy.css");
 
-body {
+* {
     /* feel free to update these css variables for a quick theme */
     
-    --color1: white;
-    --color2: white;
-    --color3: white;
-    --color4: white;
-    --color5: white;
-    
-    /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
-        
-    /* --color1: hsla(349, 69%, 76%, 1);
-    --color2: hsla(207, 67%, 44%, 1);
-    --color3: hsla(200, 61%, 56%, 1);
-    --color4: hsla(187, 41%, 94%, 1);
-    --color5: hsla(170, 28%, 95%, 1); */
+    --grape: hsla(252, 56%, 32%, 1);
+    --blueberry: hsla(252, 63%, 49%, 1);
+    --grapeTrans: hsla(252, 56%, 32%, 0.35);
+    --grapeTransHeavy: hsla(252, 56%, 32%, 0.75);
+    --blueberryTrans: hsla(252, 63%, 49%, 0.35);
+    --lime: hsla(79, 69%, 47%, 1);
+    --cherry: hsla(330, 86%, 27%, 1);
+    --strawberry: hsla(330, 71%, 47%, 1);
 
-    /* --color1: hsla(45, 86%, 83%, 1);
-    --color2: hsla(135, 65%, 98%, 1);
-    --color3: hsla(315, 37%, 86%, 1);
-    --color4: hsla(45, 73%, 98%, 1);
-    --color5: hsla(224, 40%, 79%, 1); */
+    /* background-image:
+    linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)),
+    url('images/background.jpg'); */
     
     --header-height: 80px;
     --shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
@@ -28,58 +22,40 @@ body {
     --gutter: 30px;
     --footer-height: 25px;
     
-    font-family: 'Titillium Web', sans-serif;
-    background-color: var(--color2);
-}
+    font-family: adhesive-nr-seven, serif;
+    font-family: fleisch-wolf, sans-serif;
+    font-family: fleisch-wurst, sans-serif;
+    font-family: skolar-sans-latin, sans-serif;
 
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: calc(var(--footer-height));
-}
-
-section {
-    background-color: var(--color5);
-    max-width: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: var(--gutter);
-    padding-bottom: var(--gutter);
-    margin-top: var(--gutter);
-    margin-bottom: var(--gutter);
-    border: solid 2px var(--color1);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 header {
+    font-family: 'Titillium Web', sans-serif;
     display: flex;
     justify-content: flex-end;
-    background-color: var(--color3);
+    /* background-color: var(--lime); */
     height: var(--header-height);
     box-shadow: var(--shadow);
-}
-
-
-h2 {
-    font-size: 1.8rem;
-    font-weight: bold;
-}
-
-.gutter-right {
-    margin-right: 20px;
+    background-image: linear-gradient(var(--grapeTransHeavy), var(--grapeTransHeavy)), url('../assets/rock01.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-bottom: 5px solid var(--cherry);
 }
 
 header img {
     height: var(--header-height);
 }
 
-p {
-    margin: var(--gutter);
+body{
+    background-image: linear-gradient( var(--blueberryTrans), var(--grapeTrans)), url('../assets/dungeon.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
-  
+
 footer {
     position: fixed;
     width: 100%;
@@ -87,6 +63,132 @@ footer {
     height: var(--footer-height);
     display: flex;
     justify-content: flex-end;
-    background-color: var(--color3);
     box-shadow: var(--footer-shadow);
+    background-image: linear-gradient(var(--grapeTransHeavy), var(--grapeTransHeavy)), url('../assets/rock01.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Titillium Web', sans-serif;
+    border-top: 5px solid var(--cherry);
+}
+
+main {
+    width: 100%;
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: center;
+    align-items: center;
+    margin-bottom: calc(var(--footer-height));
+}
+
+#game-holder{
+    width: 1600px;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: calc(100vh - 105px);
+
+}
+
+.gutter-right {
+    margin-right: 20px;
+}
+
+#player-panel{
+    width: 500px;
+    /* height: 100vh; */
+    min-height: calc(100vh - 105px);
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+#player-name{
+    font-family: fleisch-wolf, sans-serif;
+    font-size: 1.75rem;
+    letter-spacing: .125rem;
+    color: var(--lime);
+    padding: 5px; 
+    background-color: var(--cherry);
+}
+
+#char-sheet{
+    display: flex;
+    flex-direction: column;
+    border: 3px solid var(--blueberry);
+}
+
+#char-stats{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+}
+
+#char-class{
+    font-weight: 700;
+    min-width: 100%;
+    color: var(--cherry);
+    background-color: var(--lime);
+    padding-left: 5px;
+}
+
+#hit-points{
+    font-weight: 900;
+    font-size: 1.5rem;
+    background-color: var(--cherry);
+    padding-left: 5px;
+    min-width: 100%;
+    color: var(--lime);
+}
+
+#middle-section{
+    width: 500px;
+}
+
+#goblin-panel{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.goblin-card{
+    width: 200px;
+    height: 175px;
+    background-color: var(--lime);
+    margin-bottom: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 3px solid var(--blueberry);
+}
+
+.goblin-card:hover{
+    box-shadow: 0 0 10px var(--lime);
+}
+
+.goblin-stats{
+    position: relative;
+    bottom: 76px;
+    z-index: 100;
+}
+
+.goblin-class{
+    width: inherit;
+    background-color: var(--lime);
+    padding-left: 5px;
+}
+
+.goblin-hp{
+    background-color: var(--cherry);
+    padding-left: 5px;
+    font-size: 1.5rem;
+    color: var(--lime);
+    font-weight: 900;
+}
+
+.goblin-image{
+    object-fit: cover;
 }

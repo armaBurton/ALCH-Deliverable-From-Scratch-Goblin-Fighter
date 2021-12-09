@@ -1,46 +1,56 @@
 ## HTML Setup
-6 buttons
-- option A add button
-  - Why? 💥💥💥 Add event listener to increment the vote count for option A in the current poll
-- option B add button
-  - Why? 💥💥💥 Add event listener to increment the vote count for option B in the current poll
-- option A subtract/undo button
-  - Why? 💥💥💥 Add event listener to decrement the vote count for option A in the current poll
-- option B subtract/undo buttons
-  - Why? 💥💥💥 Add event listener to decrement the vote count for option B in the current poll
-- create poll form
-  - Why? Add 'submit' listener to (not a click listener) to the form itself!
-  - three inputs (question, option 1, option 2)
-    - Why? Figure out the user's question and options
-    - Why? 💥💥💥 On submit, update the current poll question and options, and reflect that in the DOM
-- 1 'close poll' button
-  - Why?
-    - 💥💥💥 
-    - Append the current poll to the past polls state []
-    - "Update the list"
-      - clear DOM of the list
-      - Use a for loop to loop through all past polls, create some DOM and display each past poll in the list
-    - Clear out/reset current poll state and DOM.
-- current poll section
-  - Why? a bunch of empty divs that we will inject state into (question, options, and vote totals)
-- empty div for closed polls history/list (for appending to)
-  - Why? A place to put the histry
+
+### A 'destination' for:
+- player HP
+- list of living goblins
+  - for each goblin show
+    - their name
+    - their HP
+- defeated goblins
+
+### Clickables
+- Each goblin is clickable
+  - On click . . .
+    - possibly decrmement this goblin's HP
+    - possibly decrment player HP
+    - possibly increment defeatedGoblins
+    - update the DOM with new goblin, player, and defeated goblin state. 
+    (render deated goblins differently)
+- New goblin form
+ - On Submit . . .
+  - User has supplied a name and submitted the form
+  - Make a new goblin object with that user input
+  - Add that object to the array of goblins in state
+  - "update a list"
+    - clear out the list DOM
+    - loop through the goblins
+    - render a new goblin DOM element for each item
+    - append that element to the HTML
+
+## Stretch goal ideas
+- Change the player image to something stronger-looking every time they hit a new threshold (killed first goblin, killed three goblins).
+- Change the player image based on their current health to show how worse-for-the-wear they've become.
+- Give goblins a random 'strength' property that determines how much damage they do to the player.
+- Give goblins a random 'agility' property that determines how often the play can hit them.
+- Give goblins a random 'dexterity' property that determines how often they hit the player.
+- Give the player a 'strength' property starting at 1 that determines how much damage they do to goblins. Every time a goblin dies, increment this property.
+- Add different kinds of monsters and render them differently by adding a 'type' property to the monster.
 
 | User should be able to . . .                                                         |             |
 | :----------------------------------------------------------------------------------- | ----------: |
-| Visit the deployed pages on GitHub pages, with link in the About section of the Github repo|        2 |
+| Visit the deployed pages on GitHub pages, with link in the About section of the Github repo|     1 |
 
-| Events                                                                               |             |
+| Events                                                                                |             |
 | :----------------------------------------------------------------------------------- | ----------: |
-| On load, see a form and empty current poll div                                             |        2 |
-| On submit, add the poll options and question to the current poll div                                      |        2 |
-| On clicking add or subtract, increment and decrement the correct poll votes in the current poll div|     2 |
-| On clicking finish, empty the current poll div and add the current poll to the "past polls" div. All past polls should be visible in this div by looping through and calling `renderPoll` with each poll. |4|
+| On load, see the HP and names of at least two default goblins |        2 |
+| On submitting the 'challenge goblin' form, add a new goblin object (with 3 HP and a name) to state and display it to the DOM | 2 |
+| On clicking a goblin, it should tell the user whether they hit the goblin or not, then update state and DOM appropriately with new HP |     3 |
+| On clicking a goblin, it should tell the user whether the goblin hit the player or not, then update state and DOM appropriately with new HP |     1 |
+| The number of vanquished goblins should be visible when mushroom state changes.  |        2 |
+| Render dead goblins differently, and disable clicking on them |        2 |
+| When the user's HP is 0, launch a game over message |        2 |
 
-| Functions                                                              |             |
+| Functions                                                                                |             |
 | :----------------------------------------------------------------------------------- | ----------: |
-| IMPURE: `displayCurrentPoll()` : mutates DOM to display current state of current poll | 2|
-| IMPURE: `displayAllPolls()` : clears out DOM and appends to poll div using current state of past polls | 1 |
-| IMPURE: `makePoll()` : poll object derived from state` | 1 |
-| PURE: `renderPoll(poll)` : returns DOM node | 2|
-| PURE: `renderTeam(name, score)` :  return DOM node | 2|
+| PURE: `renderGoblin(goblin)` : return DOM node` |2|
+| IMPURE: `displayGoblins()` : clears and appends goblin daya to goblin list DOM node` | 2|

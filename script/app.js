@@ -1,5 +1,5 @@
 // import functions and grab DOM elements
-
+import { goblinData } from "./goblinData.js";
 // let state
 
 // set event listeners 
