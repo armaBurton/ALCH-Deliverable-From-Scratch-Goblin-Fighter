@@ -1,6 +1,8 @@
 // import functions and grab DOM elements
 import { goblinData } from "./goblinData.js";
 import { heroData } from "./heroData.js";
+import { takesDamage } from "./takesDamage.js";
+import { doesDamage } from "./doesDamage.js";
 
 //grab character picker cards
 const daemon = document.getElementById(`daemon`);
@@ -23,20 +25,7 @@ const deadGoblinCounter = document.getElementById(`dead-goblin-counter`);
 let heroName = '';
 let characterClass = '';
 let playerHP = 50;
-
-//array of characters
-// const heroArr = [
-//     `daemon`,
-//     `feralDruid`,
-//     `hunter`,
-//     `mage`,
-//     `monk`,
-//     `robotChicken`,
-//     `rogue`,
-//     `shaman`,
-//     `warrior`,
-//     `zword`
-// ];
+let deadGoblins = 0;
 
 /* stored characters
 💀
@@ -107,16 +96,7 @@ function checkName(){
             }
         }
         makePlayerCard();
-        // console.log(playerImage.src);
-        // resetAll();
-        // for (let i = 0; i < 3; i++){
-        //         let gob = makeGoblinCard();
-        //         console.log(gob);
-        //         holdMyGoblins.push(gob);
-        //         console.log(holdMyGoblins);
-        //         goblinHovel.append(holdMyGoblins[i]);
-        //     }
-        goblinHovel.append(makeGoblinCard());
+    
         goblinHovel.append(makeGoblinCard());
         goblinHovel.append(makeGoblinCard());
     }
@@ -163,20 +143,30 @@ hpCount.textContent = playerHP;
 const goblinHovel = document.getElementById(`goblin-hovel`);
 
 function resetAll(){
+    characterClass = '';
     deadGoblinCounter.textContent = '';
-    // holdMyGoblins = [];
     playerCard.textContent = ``;
+    goblinHovel.textContent = '';
+    deadGoblins = 0;
+    playerHP = 50;
+    hpCount.textContent = playerHP;
     makePlayerCard();
 }
 
 function makePlayerCard(){
-    playerHP = 50;
     charClass.textContent = characterClass;
     hitPoints.append(hpCount);
     charStats.append(charClass, hitPoints);
     charSheet.append(playerName, playerImage, charStats);
     playerCard.append(charSheet);
 }
+
+
+const addGoblin = document.getElementById(`add-goblin`);
+addGoblin.addEventListener(`click`, () => {
+    goblinHovel.append(makeGoblinCard());
+    // makeGoblinCard();
+});
 
 const makeGoblinCard = () => {
     const goblinCard = document.createElement(`div`);
@@ -210,8 +200,65 @@ const makeGoblinCard = () => {
     goblinHP.append(gobHpCount);
     goblinStats.append(goblinClass, goblinHP);
     goblinCard.append(goblinImage, goblinStats);
-    console.log(goblinCard);
+        
+    goblinCard.addEventListener(`click`, () => {
+        clickEvents(goblinObject, gobHpCount, goblinCard);
+    });
+
     return goblinCard;
 };
+
+const clickEvents = (goblinObject, gobHpCount, goblinCard) => {
+    takesDamage(goblinObject);
+    gobHpCount.textContent = goblinObject.hp;
+    isGoblinDead(goblinObject.hp, goblinCard);
+    playerHP = doesDamage(playerHP);
+    hpCount.textContent = playerHP;
+
+    if (playerHP === 0){
+        toggleRestart();
+    }
+};
+
+let deathTray = document.getElementById(`reload-game`);
+let yes = document.getElementById(`yes`);
+let no = document.getElementById(`no`);
+
+yes.addEventListener(`click`, () => {
+    deathTray.classList.add(`visibility`);
+    resetAll();
+    playerChooser.classList.remove(`visibility`);
+
+});
+
+no.addEventListener(`click`, () => {
+    document.location.href = `https://getwork.com/`;
+});
+
+function toggleRestart(){ 
+    deathTray.classList.remove(`visibility`);
+}
+
+function isGoblinDead(goblinHP, goblinCard) {
+    if (goblinHP === 0){
+        toggleGoblinDeath(goblinCard);
+    }
+}
+
+function toggleGoblinDeath(goblinCard){
+    goblinCard.classList.add(`opacity`);
+    goblinCard.style.display = `none`;
+    // goblinCard.style.pointerEvents = `none`;
+    goblinCard.disabled = true;
+    deadGoblins++;
+    renderDeadGoblins();
+}
+
+function renderDeadGoblins(){
+    deadGoblinCounter.textContent = '';
+    for (let i = 0; i < deadGoblins; i++){
+        deadGoblinCounter.textContent += `💀`;
+    }
+}
 
 makeGoblinCard();

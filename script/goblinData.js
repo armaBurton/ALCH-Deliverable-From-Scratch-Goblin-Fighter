@@ -20,7 +20,7 @@ export const goblinData = [
         img: `./assets/fish-gun-goblin.jpg`
     },
     {
-        name: `Heavy Weapons`,
+        name: `BahzoOOokahs`,
         img: `./assets/heavy-weapons-goblin.jpg`
     },
     {
