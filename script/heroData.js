@@ -1,42 +1,42 @@
 export const heroData = [
     {
         name: `Daemon`,
-        img: `./assets/daemon.png`
+        img: `./assets/daemon.jpg`
     },
     {
         name: `Feral Druid`,
-        img: `./assets/feral-druid.png`
+        img: `./assets/feral-druid.jpg`
     },
     {
         name: `Hunter`,
-        img: `./assets/hunter.png`
+        img: `./assets/hunter.jpg`
     },
     {
-        name: `mage`,
-        img: `./assets/mage.png`
+        name: `Mage`,
+        img: `./assets/mage.jpg`
     },
     {
-        name: `monk`,
-        img: `./assets/monk.png`
+        name: `Monk`,
+        img: `./assets/monk.jpg`
     },
     {
         name: `Robot Chicken`,
-        img: `./assets/robot-chicken.png`
+        img: `./assets/robot-chicken.jpg`
     },
     {
         name: `Rogue`,
-        img: `./assets/rogue.png`
+        img: `./assets/rogue.jpg`
     },
     {
         name: `Shaman`,
-        img: `./assets/shaman.png`
+        img: `./assets/shaman.jpg`
     },
     {
         name: `Warrior`,
-        img: `./assets/warrior.png`
+        img: `./assets/warrior.jpg`
     },
     {
         name: `Zword`,
-        img: `./assets/zword.png`
+        img: `./assets/zword.jpg`
     }
 ];

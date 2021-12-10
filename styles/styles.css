@@ -10,6 +10,8 @@
     --blueberryTrans: hsla(252, 63%, 49%, 0.35);
     --lime: hsla(79, 69%, 47%, 1);
     --cherry: hsla(330, 86%, 27%, 1);
+    --limeTrans: hsla(79, 69%, 47%, .75);
+    --cherryTrans: hsla(330, 86%, 27%, .85);
     --strawberry: hsla(330, 71%, 47%, 1);
 
     /* background-image:
@@ -69,6 +71,7 @@ footer {
     background-repeat: no-repeat;
     font-family: 'Titillium Web', sans-serif;
     border-top: 5px solid var(--cherry);
+    color: var(--lime);
 }
 
 main {
@@ -229,12 +232,12 @@ main {
 
 .goblin-class{
     width: inherit;
-    background-color: var(--lime);
+    background-color: var(--limeTrans);
     padding-left: 5px;
 }
 
 .goblin-hp{
-    background-color: var(--cherry);
+    background-color: var(--cherryTrans);
     padding-left: 5px;
     font-size: 1.5rem;
     color: var(--lime);
@@ -317,8 +320,14 @@ main {
     font-size: 1.5rem;
 }
 
-#player-name{
-    margin: 20px 0;
+#player-name-input{
+    font-family: fleisch-wolf, sans-serif;
+    font-size: 1.5rem;
+    padding-left: 5px;
+    margin: 20px 0 10px 0;
+    background-color: var(--cherry);
+    color: var(--lime);
+    letter-spacing: .125rem;
 }
 
 .hero-box{
@@ -350,8 +359,8 @@ main {
 }
 
 .hero-name{
-    /* position: relative; */
-    /* top: -5px; */
+    /* position: relative;
+    top: -5px; */
     color: var(--lime);
     padding-bottom: 3px;
 }

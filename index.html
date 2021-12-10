@@ -15,26 +15,27 @@
 <body>
     <header>
         <div class="gutter-right logo">
-            <img src="./assets/big-logo.png" />
+            <img src="./assets/big-logo-green.png" />
         </div>
     </header>
     <main>
         <section class="game-holder" id="game-holder">
             <section class="player-panel" id="player-panel">
-                <div class="dead-goblins" id="dead-goblins">Goblin Kills: <span class="dead-goblins" id="dead-goblin-counter">💀💀</span></div>
+                <div class="dead-goblins" id="dead-goblins">Goblin Kills: <span class="dead-goblins" id="dead-goblin-counter"></span></div>
                 <div class="player-card" id="player-card">
-                    <div class="char-sheet" id="char-sheet">
-                        <h2 class="player-name" id="player-name">
-                            Player Name
-                        </h2>
-                        <img src="./assets/robot-chicken.jpg" alt="" class="player-image" id="player-image">
-                        <div class="char-stats" id="char-stats">
-                            <div class="char-class" id="char-class">
-                                Robot Chicken
-                            </div>
-                            <div class="hit-points" id="hit-points">HP <span class="hp-count" id="hp-count">50</span> </div>
+                    <!-- Placeholder character card -->
+                <!-- <div class="char-sheet" id="char-sheet">
+                    <h2 class="player-name" id="player-name">
+                        Player Name
+                    </h2>
+                    <img src="./assets/robot-chicken.jpg" alt="" class="player-image" id="player-image">
+                    <div class="char-stats" id="char-stats">
+                        <div class="char-class" id="char-class">
+                            Robot Chicken
                         </div>
+                        <div class="hit-points" id="hit-points">HP <span class="hp-count" id="hp-count">50</span> </div>
                     </div>
+                </div> -->
                 </div>
             </section>
             <section class="middle-section" id="middle-section">
@@ -44,25 +45,27 @@
             </section>
             <section class="goblin-panel" id="goblin-panel">
                 <button class="add-goblin" id="add-goblin">Add Goblin!</button>
-                <div class="goblin-card dead">
-                    <img src="./assets/mechazoid-goblin.jpg" alt="" class="goblin-image">
-                    <div class="goblin-stats">
-                        <div class="goblin-class" id="gob1-class">Mechaziod Goblin</div>
-                        <div class="goblin-hp">HP <span class="gob-hp-count" id="gob1-hp-count">10</span></div>
+                <div class="goblin-hovel" id="goblin-hovel">
+                    <div class="goblin-card dead">
+                        <img src="./assets/mechazoid-goblin.jpg" alt="" class="goblin-image">
+                        <div class="goblin-stats">
+                            <div class="goblin-class" id="gob1-class">Mechaziod Goblin</div>
+                            <div class="goblin-hp">HP <span class="gob-hp-count" id="gob1-hp-count">10</span></div>
+                        </div>
                     </div>
-                </div>
-                <div class="goblin-card">
-                    <img src="./assets/rocket-pod-goblin.jpg" alt="" class="goblin-image">
-                    <div class="goblin-stats">
-                        <div class="goblin-class" id="gob2-class">Rocket Pod Goblin</div>
-                        <div class="goblin-hp">HP <span class="gob-hp-count" id="gob2-hp-count">10</span></div>
+                    <div class="goblin-card">
+                        <img src="./assets/rocket-pod-goblin.jpg" alt="" class="goblin-image">
+                        <div class="goblin-stats">
+                            <div class="goblin-class" id="gob2-class">Rocket Pod Goblin</div>
+                            <div class="goblin-hp">HP <span class="gob-hp-count" id="gob2-hp-count">10</span></div>
+                        </div>
                     </div>
-                </div>
-                <div class="goblin-card">
-                    <img src="./assets/x-games-goblin.jpg" alt="" class="goblin-image">
-                    <div class="goblin-stats">
-                        <div class="goblin-class" id="gob3-class">X-Games Goblin</div>
-                        <div class="goblin-hp">HP <span class="gob-hp-count" id="gob3-hp-count">10</span></div>
+                    <div class="goblin-card">
+                        <img src="./assets/x-games-goblin.jpg" alt="" class="goblin-image">
+                        <div class="goblin-stats">
+                            <div class="goblin-class" id="gob3-class">X-Games Goblin</div>
+                            <div class="goblin-hp">HP <span class="gob-hp-count" id="gob3-hp-count">10</span></div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -71,49 +74,49 @@
             <div class="chooser-tray" id="chooser-tray">
                 <h1 id="chooser-header">Character Picker</h1>
                 <h3 id="sub-text">Enter your name then choose a hero.</h3>
-                <input type="text" class="player-name" id="player-name" placeholder="Enter your name">
+                <input type="text" class="player-name-input" id="player-name-input" placeholder="Name Your Hero" />
                 <div class="heroes" id="heroes-row-one">
-                    <div class="hero-box"  id="one">
-                        <img src="./assets/daemon.jpg" alt="" class="hero" id="hero-one">
-                        <p class="hero-name">DAEMON</p>
+                    <div class="hero-box"  id="daemon">
+                        <img src="./assets/daemon.jpg" alt="" class="hero" id="">
+                        <p class="hero-name" id="daemon-name">DAEMON</p>
                     </div>
-                    <div class="hero-box" id="two">
-                        <img src="./assets/feral-druid.jpg" alt="" class="hero" id="hero-one">
-                        <p class="hero-name">FERAL DRUID</p>
+                    <div class="hero-box" id="feral-druid">
+                        <img src="./assets/feral-druid.jpg" alt="" class="hero" id="">
+                        <p class="hero-name" id="feral-druid-name">FERAL DRUID</p>
                     </div>
-                    <div class="hero-box" id="three">
-                        <img src="./assets/hunter.jpg" alt="" class="hero" id="hero-one">
-                        <p class="hero-name">HUNTER</p>
+                    <div class="hero-box" id="hunter">
+                        <img src="./assets/hunter.jpg" alt="" class="hero" id="">
+                        <p class="hero-name" id="hunter-name">HUNTER</p>
                     </div>
-                    <div class="hero-box" id="four">
-                        <img src="./assets/mage.jpg" alt="" class="hero" id="hero-one">
-                        <p class="hero-name">MAGE</p>
+                    <div class="hero-box" id="mage">
+                        <img src="./assets/mage.jpg" alt="" class="hero" id="">
+                        <p class="hero-name" id="mage-name">MAGE</p>
                     </div>
-                    <div class="hero-box" id="five">
-                        <img src="./assets/monk.jpg" alt="" class="hero" id="hero-one">
-                        <p class="hero-name">MONK</p>
+                    <div class="hero-box" id="monk">
+                        <img src="./assets/monk.jpg" alt="" class="hero" id="">
+                        <p class="hero-name" id="monk-name">MONK</p>
                     </div>
                 </div>
                 <div class="heroes" id="heroes-row-two">
-                    <div class="hero-box" id="six">
-                        <img src="./assets/robot-chicken.jpg" alt="" class="hero" id="hero-one">
-                        <p class="hero-name">ROBOT CHICKEN</p>
+                    <div class="hero-box" id="robot-chicken">
+                        <img src="./assets/robot-chicken.jpg" alt="" class="hero" id="">
+                        <p class="hero-name" id="robot-chicken-name">ROBOT CHICKEN</p>
                     </div>
-                    <div class="hero-box" id="seven">
-                        <img src="./assets/rogue.jpg" alt="" class="hero" id="hero-one">
-                        <p class="hero-name">ROGUE</p>
+                    <div class="hero-box" id="rogue">
+                        <img src="./assets/rogue.jpg" alt="" class="hero" id="">
+                        <p class="hero-name" id="rogue-name">ROGUE</p>
                     </div>
-                    <div class="hero-box" id="eight">
-                        <img src="./assets/shaman.jpg" alt="" class="hero" id="hero-one">
-                        <p class="hero-name">SHAMAN</p>
+                    <div class="hero-box" id="shaman" value="shaman">
+                        <img src="./assets/shaman.jpg" alt="" class="hero" id="">
+                        <p class="hero-name" id="shaman-name">SHAMAN</p>
                     </div>
-                    <div class="hero-box" id="nine">
-                        <img src="./assets/warrior.jpg" alt="" class="hero" id="hero-one">
-                        <p class="hero-name">WARRIOR</p>
+                    <div class="hero-box" id="warrior">
+                        <img src="./assets/warrior.jpg" alt="" class="hero" id="">
+                        <p class="hero-name" id="warrior-name">WARRIOR</p>
                     </div>
-                    <div class="hero-box" id="ten">
-                        <img src="./assets/zword.jpg" alt="" class="hero" id="hero-one">
-                        <p class="hero-name">ZWORD</p>
+                    <div class="hero-box" id="zword">
+                        <img src="./assets/zword.jpg" alt="" class="hero" id="">
+                        <p class="hero-name" id="zword-name">ZWORD</p>
                     </div>
                 </div>
             </div>
