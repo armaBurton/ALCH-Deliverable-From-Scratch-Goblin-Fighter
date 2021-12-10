@@ -1,82 +1,78 @@
 export const goblinData = [
     {
-        name: `Assistant Goblin`,
+        name: `Assistant`,
         img: `./assets/assistant-goblin.jpg`
     },
     {
-        name: `Big-Bomb Goblin`,
+        name: `Big-Bomb`,
         img: `./assets/big-bomb-goblin.jpg`
     },
     {
-        name: `Cackling Goblin`,
+        name: `Cackling`,
         img: `./assets/cackling-goblin.jpg`
     },
     {
-        name: `Electro Goblin`,
+        name: `Electro`,
         img: `./assets/electro-goblin.jpg`
     },
     {
-        name: `Fish Gun Goblin`,
+        name: `Fish Gun`,
         img: `./assets/fish-gun-goblin.jpg`
     },
     {
-        name: `Fish Gun Goblin`,
-        img: `./assets/fish-gun-goblin.jpg`
-    },
-    {
-        name: `Heavy Weapons Goblin`,
+        name: `Heavy Weapons`,
         img: `./assets/heavy-weapons-goblin.jpg`
     },
     {
-        name: `Indiana Goblin`,
+        name: `Indiana`,
         img: `./assets/indiana-goblin.jpg`
     },
     {
-        name: `Mad Scientist Goblin`,
+        name: `Mad Scientist`,
         img: `./assets/mad-scientist-goblin.jpg`
     },
     {
-        name: `Mechazoid Goblin`,
+        name: `Mechazoid`,
         img: `./assets/mechazoid-goblin.jpg`
     },
     {
-        name: `Mime Goblin`,
+        name: `Mime`,
         img: `./assets/mime-goblin.jpg`
     },
     {
-        name: `Mystic Goblin`,
+        name: `Mystic`,
         img: `./assets/mystic-goblin.jpg`
     },
     {
-        name: `Nice Ride Goblin`,
+        name: `Nice Ride`,
         img: `./assets/nice-ride-goblin.jpg`
     },
     {
-        name: `One Percent Goblin`,
+        name: `One Percent`,
         img: `./assets/one-percent-goblin.jpg`
     },
     {
-        name: `Pirate Goblin`,
+        name: `Pirate`,
         img: `./assets/pirate-goblin.jpg`
     },
     {
-        name: `Rocket Pod Goblin`,
+        name: `Rocket Pod`,
         img: `./assets/rocket-pod-goblin.jpg`
     },
     {
-        name: `Speed-Racer Goblin`,
+        name: `Speed-Racer`,
         img: `./assets/speed-racer-goblin.jpg`
     },
     {
-        name: `Turtle Goblin`,
+        name: `Turtle`,
         img: `./assets/turtle-goblin.jpg`
     },
     {
-        name: `Unlucky Goblin`,
+        name: `Unlucky`,
         img: `./assets/unlucky-goblin.jpg`
     },
     {
-        name: `X-Games Goblin`,
+        name: `X-Games`,
         img: `./assets/x-games-goblin.jpg`
     },
 ]
