@@ -226,6 +226,10 @@ main {
     box-shadow: 0 0 10px var(--lime);
 }
 
+.goblin-card:active{
+    box-shadow: 0 0 10px var(--blueberry);
+}
+
 .goblin-stats{
     position: relative;
     bottom: 90px;
@@ -360,6 +364,10 @@ main {
 
 .hero-box:hover{
     box-shadow: 0 0 15px var(--lime);
+}
+
+.hero-box:active{
+    box-shadow: 0 0 15px var(--blueberry);
 }
 
 .hero{

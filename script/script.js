@@ -162,7 +162,7 @@ function makePlayerCard(){
 }
 
 
-const addGoblin = document.getElementById(`add-goblin`);
+// const addGoblin = document.getElementById(`add-goblin`);
 const form = document.querySelector(`form`);
 form.addEventListener(`submit`, (e) => {
     e.preventDefault();
@@ -223,6 +223,9 @@ const clickEvents = (goblinObject, gobHpCount, goblinCard) => {
     }
 };
 
+const allMyDeadGoblins = document.getElementById(`this-many`);
+allMyDeadGoblins.textContent = deadGoblins;
+
 let deathTray = document.getElementById(`reload-game`);
 let yes = document.getElementById(`yes`);
 let no = document.getElementById(`no`);
@@ -238,13 +241,16 @@ no.addEventListener(`click`, () => {
     document.location.href = `https://getwork.com/`;
 });
 
+
 function toggleRestart(){ 
+    allMyDeadGoblins.textContent = deadGoblins;
     deathTray.classList.remove(`visibility`);
 }
 
 function isGoblinDead(goblinHP, goblinCard) {
     if (goblinHP === 0){
         toggleGoblinDeath(goblinCard);
+        // deadGoblins++;
     }
 }
 
@@ -254,6 +260,7 @@ function toggleGoblinDeath(goblinCard){
     // goblinCard.style.pointerEvents = `none`;
     goblinCard.disabled = true;
     deadGoblins++;
+    console.log(deadGoblins);
     renderDeadGoblins();
 }
 
