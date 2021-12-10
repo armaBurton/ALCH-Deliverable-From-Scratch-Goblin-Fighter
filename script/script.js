@@ -163,7 +163,10 @@ function makePlayerCard(){
 
 
 const addGoblin = document.getElementById(`add-goblin`);
-addGoblin.addEventListener(`click`, () => {
+const form = document.querySelector(`form`);
+form.addEventListener(`submit`, (e) => {
+    e.preventDefault();
+
     goblinHovel.append(makeGoblinCard());
     // makeGoblinCard();
 });
