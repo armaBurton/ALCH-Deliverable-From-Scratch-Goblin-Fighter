@@ -4,6 +4,8 @@ import { heroData } from "./heroData.js";
 import { takesDamage } from "./takesDamage.js";
 import { doesDamage } from "./doesDamage.js";
 import { makeGoblinCard } from "./makeGoblinCard.js";
+export let scrollingCombatText = [];
+export const sct = document.getElementById(`scrolling-combat-text`);
 
 //grab character picker cards
 const daemon = document.getElementById(`daemon`);
@@ -152,6 +154,7 @@ function resetAll(){
     playerHP = 50;
     hpCount.textContent = playerHP;
     makePlayerCard();
+    sct.textContent = ``;
 }
 
 function makePlayerCard(){
@@ -165,50 +168,16 @@ function makePlayerCard(){
 const form = document.querySelector(`form`);
 form.addEventListener(`submit`, (e) => {
     e.preventDefault();
-
+    const newGoblin = document.createElement(`p`);
+    newGoblin.classList.add(`newGoblin`);
+    newGoblin.textContent = `A new goblin has joined the battle!`;
+    sct.prepend(newGoblin);
     goblinHovel.append(makeGoblinCard());
     // makeGoblinCard();
 });
 
-// const makeGoblinCard = () => {
-//     const goblinCard = document.createElement(`div`);
-//     goblinCard.classList.add(`goblin-card`);
-    
-//     const goblinImage = document.createElement(`img`);
-//     goblinImage.classList.add(`goblin-image`);
-    
-//     const goblinStats = document.createElement(`div`);
-//     goblinStats.classList.add(`goblin-stats`);
-    
-//     const goblinClass = document.createElement(`p`);
-//     goblinClass.classList.add(`goblin-class`);
-    
-//     const goblinHP = document.createElement(`p`);
-//     goblinHP.classList.add(`goblin-hp`);
-//     goblinHP.textContent = `HP ≈ `;
-    
-//     const gobHpCount = document.createElement(`span`);
-//     gobHpCount.classList.add(`gob-hp-count`);
-
-//     let num = Math.floor(Math.random() * 19);
-//     let goblinObject = {
-//         name:goblinData[num].name,
-//         img:goblinData[num].img,
-//         hp:Math.ceil(Math.random() * 5) + 5
-//     };
-//     goblinClass.textContent = goblinObject.name;
-//     goblinImage.src = goblinObject.img;
-//     gobHpCount.textContent = goblinObject.hp;
-//     goblinHP.append(gobHpCount);
-//     goblinStats.append(goblinClass, goblinHP);
-//     goblinCard.append(goblinImage, goblinStats);
-        
-//     goblinCard.addEventListener(`click`, () => {
-//         clickEvents(goblinObject, gobHpCount, goblinCard);
-//     });
-
-//     return goblinCard;
-// };
+// console.log(scrollingCombatText);
+// sct.append(scrollingCombatText);
 
 export const clickEvents = (goblinObject, gobHpCount, goblinCard) => {
     takesDamage(goblinObject);
@@ -216,6 +185,12 @@ export const clickEvents = (goblinObject, gobHpCount, goblinCard) => {
     isGoblinDead(goblinObject.hp, goblinCard);
     playerHP = doesDamage(playerHP);
     hpCount.textContent = playerHP;
+
+
+    for (let fight of scrollingCombatText){
+        console.log(fight);
+    }
+
 
     if (playerHP === 0){
         toggleRestart();
@@ -249,15 +224,20 @@ function toggleRestart(){
 function isGoblinDead(goblinHP, goblinCard) {
     if (goblinHP === 0){
         toggleGoblinDeath(goblinCard);
+        const deadGoblin = document.createElement(`p`);
+        deadGoblin.classList.add(`dead-goblin`);
+        deadGoblin.textContent = `You have slain a goblin`;
+        sct.prepend(deadGoblin);
         // deadGoblins++;
     }
 }
 
 function toggleGoblinDeath(goblinCard){
     goblinCard.classList.add(`opacity`);
-    goblinCard.style.display = `none`;
+    // goblinCard.style.display = `none`;
     // goblinCard.style.pointerEvents = `none`;
-    goblinCard.disabled = true;
+    // goblinCard.setAttribute(`pointer-events`, `none`);
+    goblinCard.classList.add(`no-touch`);
     deadGoblins++;
     console.log(deadGoblins);
     renderDeadGoblins();

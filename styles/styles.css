@@ -99,7 +99,7 @@ main {
 }
 
 #player-panel{
-    width: 500px;
+    width: 350px;
     /* height: 100vh; */
     min-height: calc(100vh - 105px);
     display: flex;
@@ -172,6 +172,51 @@ main {
     align-items: center;
 }
 
+.head-line{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.scrolling-combat-text{
+    width: 500px;
+    height: 250px;
+    background-color: white;
+    border-radius: 5px;
+    border: 3px solid var(--strawberry);
+    overflow: scroll;
+    overflow-x: hidden;
+
+}
+
+.blueberry{
+    color: var(--blueberry);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.strawberry{
+    color: var(--strawberry);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.newGoblin{
+    background-color: var(--grape);
+    color: var(--lime);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dead-goblin{
+    background-color: var(--lime);
+    color: var(--cherry);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 .title{
     font-family: fleisch-wolf, sans-serif;
     color: var(--lime);
@@ -205,10 +250,11 @@ main {
 }
 
 #goblin-panel{
-    width: 500px;
+    width: 800px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: 50px;
 }
 
 .goblin-card{
@@ -219,7 +265,10 @@ main {
     overflow: hidden;
     cursor: pointer;
     border: 3px solid var(--blueberry);
-    object-fit: contain
+    object-fit: contain;
+    display: inline-flex;
+    margin-right: 20px;
+    position: relative;
 }
 
 .goblin-card:hover{
@@ -231,9 +280,11 @@ main {
 }
 
 .goblin-stats{
-    position: relative;
-    bottom: 90px;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
     z-index: 100;
+    width: 100%;
 }
 
 .goblin-class{
@@ -255,6 +306,10 @@ main {
     object-fit: cover;
 }
 
+.no-touch{
+    pointer-events: none;
+}
+
 .dead{
     opacity: 35%;
     cursor: default; 
@@ -263,6 +318,8 @@ main {
 .dead:hover{
     box-shadow: none;
 }
+
+
 
 #add-goblin{
     position: fixed;
